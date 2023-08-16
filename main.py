@@ -1,7 +1,7 @@
 from TikiClawer import TikiClawer
 
+tiki_url = "https://tiki.vn"
 
 tiki = TikiClawer()
 
-print(tiki.hello)
-
+tiki.getUrl(tiki_url)
