@@ -1,4 +1,4 @@
-# 📒 TikiClawer
+# 📒 TikiClawerStarter
 ![GitHub repo size](https://img.shields.io/github/repo-size/CodingLinhTinh/TikiClawerStarter?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/CodingLinhTinh/TikiClawerStarter?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/CodingLinhTinh/TikiClawerStarter?style=for-the-badge)
@@ -7,36 +7,36 @@
 ## Description
 > #### Trình thu thập thông tin Tiki đơn giản để xuất tệp CSV để import vào trang web: <a href='https://ngocvietfood.azurewebsites.net/'>NgocVietFood</a>
 
-
 ## 🧐 Authors
 **Author**: Quách Bảo Ngọc - 20520655
 
+## 🏫 Nội dung sẽ học
+### 1. Ngôn ngữ Python:  tạo/đọc/viết file, OOP
+### 2. Sử dụng thư viện Selenium cho Tự động hóa, Trích xuất dữ liệu
+### 3. Thiết kế Wordpress:  tạo 1 web bán hàng trên wordpress + có hợp Woocommerce API
+### 4. Tạo phần mềm quản lý sản phẩm cho trang web đó
 
-## 🖼️ Giao diện
+## 🏆 Sau học xong có thể làm:
+- Python software developer
+- Lập trình viên Wordpress
+- QA/QC
+- Data Analyst (Maybe)
 
-### 1. Main.exe
-![3](https://user-images.githubusercontent.com/80575560/232669725-52e87e5e-8b8a-4b56-8fe7-527d34693527.png)
-
-### 2. Khi chạy app
-![4](https://user-images.githubusercontent.com/80575560/232669727-ef8e6435-f2b2-41c6-a52e-281929e5eec1.png)
-
-### 3. Import thành công
-![1](https://user-images.githubusercontent.com/80575560/232669709-e297f8e0-e47b-48a1-b166-4144a4da9792.png)
-
-### 4. Các sản phẩm đã import
-![2](https://user-images.githubusercontent.com/80575560/232669718-aa018399-9503-447d-b25a-114fccae62b0.png)
-
-## ⚙️ Hướng dẫn sử dụng
+## ⚙️ Hướng dẫn cài đặt
 <b>Sử dụng Python để chạy</b>
 - Gõ lệnh cài đặt biến môi trường
-```python -m venv env
+```
+python -m venv env
 ```
 - Activate biến môi trường:
-```env\Scripts\activate
+```
+env\Scripts\activate
 ```
 - Chạy file requirements.txt 
-```pip install -r requirements.txt 
+```
+pip install -r requirements.txt 
 ```
 - Chạy file main.py
-```python main.py
+```
+python main.py
 ```
