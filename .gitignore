@@ -1,5 +1,0 @@
-env/
-__pycache__/
-.vscode/
-.gitignore
-test.py 
