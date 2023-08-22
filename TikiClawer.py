@@ -26,6 +26,10 @@ class TikiClawer:
         self.images = ""
         self.regular_price = ""
         self.discounted_price = ""
+        self.discount_rate = ""
+        self.sold = ""
+        
+        
         
         
     # Lấy link
@@ -91,11 +95,36 @@ class TikiClawer:
     
     # Lấy tên sản phẩm(??)
     def getName(self, xpath):
-        pass 
+        name = self.driver.find_element(By.XPATH, xpath)
+        self.name = name.text 
+        
     
     # Trả về 1 list prices(??)
     def getPrices(self, xpath):
-        pass 
+        # lấy giá
+        try:
+            flash_sale = self.driver.find_elements(By.CLASS_NAME, "flash-sale-price")
+            if flash_sale:
+                flash_sale_regular_price_xpath = '//*[@id="__next"]/div[1]/main/div[3]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/div/span[1]'
+                flash_sale_discount_price_xpath = '//*[@id="__next"]/div[1]/main/div[3]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/span'
+
+                self.discounted_price = self.getProductInfo(flash_sale_discount_price_xpath)
+                self.regular_price = self.getProductInfo(flash_sale_regular_price_xpath)
+            else: 
+                prices = self.getListProduct(xpath)
+                # 0: giá khuyến mãi, 1: giá gốc
+                # nếu len == 1 cho chỉ có giá gốc
+                if len(prices) == 1:
+                    self.regular_price = prices[0].replace(".", " ")
+                    self.discounted_price = ""
+                    
+                
+                elif len(prices) >= 2:
+                    self.discounted_price = prices[0].replace(".", " ")
+                    self.regular_price = prices[1].replace(".", " ")
+
+        except Exception as e:
+            print(e)
     
     # Lấy tên thương hiệu
     def getBrand(self, xpath):
@@ -106,7 +135,23 @@ class TikiClawer:
             pass
     
     # Lấy thêm dữ liệu thì lấy
-    
+
+    # Lấy tỉ lệ giảm giá
+    def getDiscountRate(self, xpath):
+        try:
+            discount_rate = self.driver.find_element(By.XPATH, xpath) 
+            self.discount_rate = discount_rate.text
+        except Exception as e:
+            pass
+
+    # Lấy số lượng sản phẩm đã bán ra thị trường 
+    def getSold(self):
+        try:    
+            sold = self.driver.find_element_by_xpath("//div[@class='styles__StyledQuantitySold-sc-1u1gph7-2 exWbxD']")
+            self.sold = sold.text
+        except Exception as e:
+            pass
+
     
     # Lưu vào 1 list
     def appendtoTotalProduct(self, list):
@@ -119,6 +164,10 @@ class TikiClawer:
                 "Stock": 100,
                 "Sale price": self.discounted_price,
                 "Regular price": self.regular_price,
+                "Discount rate": self.discount_rate,
+                "Sold" : self.sold,
+               
+                
                 # "Images": self.image,
                 })
             
