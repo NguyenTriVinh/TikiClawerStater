@@ -8,7 +8,7 @@
 > #### Trình thu thập thông tin Tiki đơn giản để xuất tệp CSV để import vào trang web: <a href='https://ngocvietfood.azurewebsites.net/'>NgocVietFood</a>
 
 ## 🧐 Authors
-**Author**: Quách Bảo Ngọc - 20520655
+**Author**: Nguyễn Trí Vĩnh - 22521678
 
 ## 🏫 Nội dung sẽ học
 ### 1. Ngôn ngữ Python:  tạo/đọc/viết file, OOP
